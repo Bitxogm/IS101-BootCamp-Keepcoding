@@ -45,6 +45,8 @@ def a_romano_menor_4000(n: int) -> str:
     return resultado
 
 def de_arabigo_a_romano(n: int) -> str:
+    if n < 0:
+        raise ValueError("Solo enteros no negativos")
     groups = to_groups(n)
 
     result = ""
@@ -164,7 +166,9 @@ def to_groups(number: int) -> list:
         result.append(resto)
         number = number // 1000
 
-    if result[-1] < 4 and len(result) > 1:
+    if not result:
+        result = [0] 
+    elif result[-1] < 4 and len(result) > 1:
         result[-2] = result[-1] * 1000 + result[-2]
         result.pop()
 

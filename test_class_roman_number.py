@@ -1,5 +1,5 @@
 import pytest
-from ClassRomanNumber  import RomanNumber as rn
+from roman_number import RomanNumber as rn
 
 @pytest.mark.parametrize(
     "number_r, representacion",
